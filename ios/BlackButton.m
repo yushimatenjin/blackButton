@@ -15,6 +15,7 @@
 @implementation BlackButton : UIView  {
 
   RCTEventDispatcher *_eventDispatcher;
+  UIButton * _blackButton;
   
 }
 
@@ -22,9 +23,19 @@
 {
   if ((self = [super init])) {
     _eventDispatcher = eventDispatcher;
+    _blackButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
+    _blackButton.backgroundColor = [UIColor blackColor];
+    [_blackButton setTitle:@"Text" forState:UIControlStateNormal];
+    [_blackButton setTitle:@"ぽちね" forState:UIControlStateHighlighted];
+    [_blackButton setNeedsDisplay];
   }
     
   return self;
 }
-
+- (void)layoutSubviews
+{
+  [super layoutSubviews];
+  [self addSubview:_blackButton];
+  
+}
 @end

@@ -10,7 +10,3 @@ export default class BlackButtonView extends Component {
     return <BlackButton {...this.props} />
   }
 }
-
-BlackButtonView.propTypes = {
-  exampleProp: React.PropTypes.string
-}
